@@ -1,8 +1,11 @@
 /Eyes_detection
 /Face_detection
 
-/runs
+/yolo_dataset_eyes
+/yolo_dataset_faces
+
 /yolo_dataset
 
 tmp.*
+temp.*
 *.pt
