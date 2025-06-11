@@ -9,3 +9,7 @@
 tmp.*
 temp.*
 *.pt
+test_yolo.py
+display_metrics.py
+
+/__pycache__/

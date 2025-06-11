@@ -1,0 +1,1118 @@
+[Running] python -u "c:\Users\jedno\Desktop\labmouse\test_yolo.py"
+U�ywane urz�dzenie: cpu
+c:\Users\jedno\Desktop\labmouse\test_yolo.py:36: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(model_path, map_location=device))
+Model YOLO za�adowany z yolo_model.pth
+c:\Users\jedno\Desktop\labmouse\test_yolo.py:48: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location='cpu')
+Dost�pne klucze w checkpoincie: ['backbone.conv1.weight', 'backbone.bn1.weight', 'backbone.bn1.bias', 'backbone.bn1.running_mean', 'backbone.bn1.running_var', 'backbone.bn1.num_batches_tracked', 'backbone.layer1.0.conv1.weight', 'backbone.layer1.0.bn1.weight', 'backbone.layer1.0.bn1.bias', 'backbone.layer1.0.bn1.running_mean']...
+Znaleziono warstw� wyj�ciow�: backbone.fc.4.weight z shape: torch.Size([3, 128])
+Wykryto 3 klas
+Pr�ba utworzenia PainClassifier z 3 klasami...
+C:\Users\jedno\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\jedno\AppData\Local\Programs\Python\Python39\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Model utworzony pomy�lnie
+Struktura modelu:
+  backbone.conv1.weight: torch.Size([64, 3, 7, 7])
+  backbone.bn1.weight: torch.Size([64])
+  backbone.bn1.bias: torch.Size([64])
+  backbone.layer1.0.conv1.weight: torch.Size([64, 64, 3, 3])
+  backbone.layer1.0.bn1.weight: torch.Size([64])
+  backbone.layer1.0.bn1.bias: torch.Size([64])
+  backbone.layer1.0.conv2.weight: torch.Size([64, 64, 3, 3])
+  backbone.layer1.0.bn2.weight: torch.Size([64])
+  backbone.layer1.0.bn2.bias: torch.Size([64])
+  backbone.layer1.1.conv1.weight: torch.Size([64, 64, 3, 3])
+  backbone.layer1.1.bn1.weight: torch.Size([64])
+  backbone.layer1.1.bn1.bias: torch.Size([64])
+  backbone.layer1.1.conv2.weight: torch.Size([64, 64, 3, 3])
+  backbone.layer1.1.bn2.weight: torch.Size([64])
+  backbone.layer1.1.bn2.bias: torch.Size([64])
+  backbone.layer2.0.conv1.weight: torch.Size([128, 64, 3, 3])
+  backbone.layer2.0.bn1.weight: torch.Size([128])
+  backbone.layer2.0.bn1.bias: torch.Size([128])
+  backbone.layer2.0.conv2.weight: torch.Size([128, 128, 3, 3])
+  backbone.layer2.0.bn2.weight: torch.Size([128])
+  backbone.layer2.0.bn2.bias: torch.Size([128])
+  backbone.layer2.0.downsample.0.weight: torch.Size([128, 64, 1, 1])
+  backbone.layer2.0.downsample.1.weight: torch.Size([128])
+  backbone.layer2.0.downsample.1.bias: torch.Size([128])
+  backbone.layer2.1.conv1.weight: torch.Size([128, 128, 3, 3])
+  backbone.layer2.1.bn1.weight: torch.Size([128])
+  backbone.layer2.1.bn1.bias: torch.Size([128])
+  backbone.layer2.1.conv2.weight: torch.Size([128, 128, 3, 3])
+  backbone.layer2.1.bn2.weight: torch.Size([128])
+  backbone.layer2.1.bn2.bias: torch.Size([128])
+  backbone.layer3.0.conv1.weight: torch.Size([256, 128, 3, 3])
+  backbone.layer3.0.bn1.weight: torch.Size([256])
+  backbone.layer3.0.bn1.bias: torch.Size([256])
+  backbone.layer3.0.conv2.weight: torch.Size([256, 256, 3, 3])
+  backbone.layer3.0.bn2.weight: torch.Size([256])
+  backbone.layer3.0.bn2.bias: torch.Size([256])
+  backbone.layer3.0.downsample.0.weight: torch.Size([256, 128, 1, 1])
+  backbone.layer3.0.downsample.1.weight: torch.Size([256])
+  backbone.layer3.0.downsample.1.bias: torch.Size([256])
+  backbone.layer3.1.conv1.weight: torch.Size([256, 256, 3, 3])
+  backbone.layer3.1.bn1.weight: torch.Size([256])
+  backbone.layer3.1.bn1.bias: torch.Size([256])
+  backbone.layer3.1.conv2.weight: torch.Size([256, 256, 3, 3])
+  backbone.layer3.1.bn2.weight: torch.Size([256])
+  backbone.layer3.1.bn2.bias: torch.Size([256])
+  backbone.layer4.0.conv1.weight: torch.Size([512, 256, 3, 3])
+  backbone.layer4.0.bn1.weight: torch.Size([512])
+  backbone.layer4.0.bn1.bias: torch.Size([512])
+  backbone.layer4.0.conv2.weight: torch.Size([512, 512, 3, 3])
+  backbone.layer4.0.bn2.weight: torch.Size([512])
+  backbone.layer4.0.bn2.bias: torch.Size([512])
+  backbone.layer4.0.downsample.0.weight: torch.Size([512, 256, 1, 1])
+  backbone.layer4.0.downsample.1.weight: torch.Size([512])
+  backbone.layer4.0.downsample.1.bias: torch.Size([512])
+  backbone.layer4.1.conv1.weight: torch.Size([512, 512, 3, 3])
+  backbone.layer4.1.bn1.weight: torch.Size([512])
+  backbone.layer4.1.bn1.bias: torch.Size([512])
+  backbone.layer4.1.conv2.weight: torch.Size([512, 512, 3, 3])
+  backbone.layer4.1.bn2.weight: torch.Size([512])
+  backbone.layer4.1.bn2.bias: torch.Size([512])
+  backbone.fc.1.weight: torch.Size([128, 512])
+  backbone.fc.1.bias: torch.Size([128])
+  backbone.fc.4.weight: torch.Size([3, 128])
+  backbone.fc.4.bias: torch.Size([3])
+c:\Users\jedno\Desktop\labmouse\test_yolo.py:109: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+Klasyfikator b�lu za�adowany pomy�lnie z best_classifier.pth (3 klas)
+Liczba klas b�lu: 3
+Klasyfikator b�lu za�adowany: Tak
+Za�adowano dane z data/eyes_detection_data.json - 1087 obraz�w
+Znaleziono 1087 obraz�w w folderze Eyes_detection/
+
+=== TESTOWANIE YOLO + KLASYFIKACJI B�LU NA 10 OBRAZACH Z EYES_DETECTION ===
+Pr�g confidence: 0.3
+
+============================================================
+Obraz 1/10: animalImage_136.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (542, 542)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -22.9751
+  Max: 11.6175
+  Mean: -2.0006
+  Std: 5.6186
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.03981079   0.5556994    0.1233781   -0.11879861 -18.964146
+   0.29573905   0.7014855 ]
+  Anchor 0, Grid (6,6): raw values = [  0.18013026   0.34031236   0.788609    -0.11866503 -12.588741
+  -0.2621824    0.13040572]
+  Anchor 0, Grid (12,12): raw values = [  0.03354003   0.1536476   -0.26033863   0.01901233 -16.154652
+   0.1538848    0.19991514]
+
+  Wysokie confidence w [2,10,7]:
+    Raw values: x=0.8505, y=0.5671, w=0.6213, h=0.6121, conf=0.0144
+    After sigmoid conf: 0.5036
+    Class scores: [1.0225499e-05 9.9998975e-01]
+    Processed coords: x=0.5924, y=0.8183, w=0.6505, h=0.6484
+    Class: 1, class_conf: 1.0000, final_conf: 0.5036
+
+  Wysokie confidence w [2,10,8]:
+    Raw values: x=0.2267, y=0.6758, w=0.5758, h=0.6585, conf=1.9750
+    After sigmoid conf: 0.8781
+    Class scores: [1.5993588e-07 9.9999988e-01]
+    Processed coords: x=0.6582, y=0.8202, w=0.6401, h=0.6589
+    Class: 1, class_conf: 1.0000, final_conf: 0.8781
+
+  Wysokie confidence w [2,11,8]:
+    Raw values: x=0.2576, y=0.2922, w=0.5930, h=0.7425, conf=-0.7261
+    After sigmoid conf: 0.3261
+    Class scores: [4.0072578e-07 9.9999964e-01]
+    Processed coords: x=0.6588, y=0.8902, w=0.6441, h=0.6775
+    Class: 1, class_conf: 1.0000, final_conf: 0.3261
+
+Batch 0: przeanalizowano 507 kom�rek, 3 z wysokim confidence
+Batch 0: znaleziono 3 finalnych predykcji
+
+Znaleziono 3 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 542x542)
+  Predykcja 1: center=(321.1,443.5), size=(352.6x351.4)
+ bbox=(144.8,267.8,497.3,542.0)
+  Predykcja 2: center=(356.7,444.6), size=(346.9x357.1)
+ bbox=(183.3,266.0,530.2,542.0)
+  Predykcja 3: center=(357.1,482.5), size=(349.1x367.2)
+ bbox=(182.5,298.9,531.6,542.0)
+
+Dodawanie klasyfikacji b�lu dla 3 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (144,267) -> (497,542), rozmiar: 353x275
+    Klasyfikator b�lu - raw output: [-6.14109    2.635445   4.6172957]
+    Klasyfikator b�lu - probabilities: [1.86901616e-05 1.21119425e-01 8.78861845e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.8789
+ Wynik: poziom b�lu 2, confidence 0.8789
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (183,265) -> (530,542), rozmiar: 347x277
+    Klasyfikator b�lu - raw output: [-5.971546   2.5038562  4.5143547]
+    Klasyfikator b�lu - probabilities: [2.4628464e-05 1.1810214e-01 8.8187331e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.8819
+ Wynik: poziom b�lu 2, confidence 0.8819
+
+Predykcja 3: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (182,298) -> (531,542), rozmiar: 349x244
+    Klasyfikator b�lu - raw output: [-7.2392373  2.6097136  5.370868 ]
+    Klasyfikator b�lu - probabilities: [3.1396178e-06 5.9459571e-02 9.4053727e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9405
+ Wynik: poziom b�lu 2, confidence 0.9405
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_136.png
+========================================
+Wykryte oczy: 3
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (144.8, 267.8) - (497.3, 542.0)
+    YOLO Confidence: 0.5036
+    Pain Classification: Severe Pain (confidence: 0.8789)
+
+  Oko 2:
+    Pozycja: (183.3, 266.0) - (530.2, 542.0)
+    YOLO Confidence: 0.8781
+    Pain Classification: Severe Pain (confidence: 0.8819)
+
+  Oko 3:
+    Pozycja: (182.5, 298.9) - (531.6, 542.0)
+    YOLO Confidence: 0.3261
+    Pain Classification: Severe Pain (confidence: 0.9405)
+
+  Ground Truth:
+    GT 1: (156, 267) - (551, 631), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.637)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.662)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.590)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_1_animalImage_136.png
+
+============================================================
+Obraz 2/10: animalImage_13.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (585, 585)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -19.9529
+  Max: 10.5446
+  Mean: -1.7979
+  Std: 5.0253
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.07474278  -0.02337234  -0.25947848   0.0694159  -15.064356
+   0.17094958   0.15983051]
+  Anchor 0, Grid (6,6): raw values = [ 2.2166768e-01  2.1554059e-01  1.6026048e-01  7.1729913e-02
+ -9.2620258e+00 -4.4646713e-01  7.3735565e-03]
+  Anchor 0, Grid (12,12): raw values = [ 6.4109050e-02  4.4872880e-02 -1.4182901e-01  3.4263093e-02
+ -1.5852458e+01  2.3127854e-02  3.5310648e-03]
+
+  Wysokie confidence w [2,10,7]:
+    Raw values: x=0.6980, y=0.5508, w=0.7137, h=0.5583, conf=-0.3486
+    After sigmoid conf: 0.4137
+    Class scores: [1.9615193e-06 9.9999809e-01]
+    Processed coords: x=0.5898, y=0.8180, w=0.6712, h=0.6361
+    Class: 1, class_conf: 1.0000, final_conf: 0.4137
+
+  Wysokie confidence w [2,10,8]:
+    Raw values: x=0.0926, y=0.7051, w=0.5874, h=0.5997, conf=-0.3781
+    After sigmoid conf: 0.4066
+    Class scores: [4.5279915e-08 1.0000000e+00]
+    Processed coords: x=0.6556, y=0.8207, w=0.6428, h=0.6456
+    Class: 1, class_conf: 1.0000, final_conf: 0.4066
+
+  Wysokie confidence w [2,11,8]:
+    Raw values: x=0.3030, y=0.3378, w=0.5163, h=0.6478, conf=-1.1736
+    After sigmoid conf: 0.2362
+
+Batch 0: przeanalizowano 507 kom�rek, 3 z wysokim confidence
+Batch 0: znaleziono 2 finalnych predykcji
+
+Znaleziono 2 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 585x585)
+  Predykcja 1: center=(345.0,478.5), size=(392.7x372.1)
+ bbox=(148.7,292.5,541.4,585.0)
+  Predykcja 2: center=(383.5,480.1), size=(376.0x377.7)
+ bbox=(195.5,291.3,571.5,585.0)
+
+Dodawanie klasyfikacji b�lu dla 2 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (148,292) -> (541,585), rozmiar: 393x293
+    Klasyfikator b�lu - raw output: [ 2.2450428  2.2507143 -2.2504606]
+    Klasyfikator b�lu - probabilities: [0.4958235  0.49864358 0.00553293]
+    Klasyfikator b�lu - predicted class: 1, confidence: 0.4986
+ Wynik: poziom b�lu 1, confidence 0.4986
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (195,291) -> (571,585), rozmiar: 376x294
+    Klasyfikator b�lu - raw output: [ 2.2436514  1.595547  -2.0975509]
+    Klasyfikator b�lu - probabilities: [0.6510175  0.34050578 0.00847681]
+    Klasyfikator b�lu - predicted class: 0, confidence: 0.6510
+ Wynik: poziom b�lu 0, confidence 0.6510
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_13.png
+========================================
+Wykryte oczy: 2
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (148.7, 292.5) - (541.4, 585.0)
+    YOLO Confidence: 0.4137
+    Pain Classification: Mild Pain (confidence: 0.4986)
+
+  Oko 2:
+    Pozycja: (195.5, 291.3) - (571.5, 585.0)
+    YOLO Confidence: 0.4066
+    Pain Classification: No Pain (confidence: 0.6510)
+
+  Ground Truth:
+    GT 1: (142, 283) - (564, 678), Pain: Pain Level 0
+ Dopasowano z predykcj� (IoU: 0.689)
+ Klasyfikacja b�lu: no match (pred: 1, gt: 0)
+ Dopasowano z predykcj� (IoU: 0.641)
+ Klasyfikacja b�lu: no match (pred: 0, gt: 0)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_2_animalImage_13.png
+
+============================================================
+Obraz 3/10: animalImage_463.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (637, 637)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -23.4557
+  Max: 9.4826
+  Mean: -1.9564
+  Std: 5.3698
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.22143646   0.13152575  -0.16292948  -0.06554489 -17.553974
+   0.3803493    0.17543639]
+  Anchor 0, Grid (6,6): raw values = [  0.13766421   0.09435809   0.70258045  -0.6304566  -15.466765
+   0.40052646  -0.07924099]
+  Anchor 0, Grid (12,12): raw values = [  0.13465378   0.09058523  -0.1547723    0.07231615 -11.4782295
+  -0.07254851  -0.03281393]
+
+  Wysokie confidence w [2,10,6]:
+    Raw values: x=0.8182, y=0.7892, w=0.6248, h=0.6991, conf=1.8771
+    After sigmoid conf: 0.8673
+    Class scores: [5.9019065e-09 1.0000000e+00]
+    Processed coords: x=0.5149, y=0.8221, w=0.6513, h=0.6680
+    Class: 1, class_conf: 1.0000, final_conf: 0.8673
+
+  Wysokie confidence w [2,10,7]:
+    Raw values: x=0.1235, y=0.7440, w=0.5642, h=0.6058, conf=1.6850
+    After sigmoid conf: 0.8436
+    Class scores: [8.98904e-09 1.00000e+00]
+    Processed coords: x=0.5793, y=0.8214, w=0.6374, h=0.6470
+    Class: 1, class_conf: 1.0000, final_conf: 0.8436
+
+  Wysokie confidence w [2,11,6]:
+    Raw values: x=0.9493, y=0.0735, w=0.5237, h=0.6407, conf=-0.0916
+    After sigmoid conf: 0.4771
+    Class scores: [1.13192165e-07 9.99999881e-01]
+    Processed coords: x=0.5170, y=0.8860, w=0.6280, h=0.6549
+    Class: 1, class_conf: 1.0000, final_conf: 0.4771
+
+  Wysokie confidence w [2,11,7]:
+    Raw values: x=0.2994, y=0.0856, w=0.5018, h=0.6693, conf=-0.5140
+    After sigmoid conf: 0.3743
+    Class scores: [1.4995011e-07 9.9999988e-01]
+    Processed coords: x=0.5826, y=0.8863, w=0.6229, h=0.6614
+    Class: 1, class_conf: 1.0000, final_conf: 0.3743
+
+Batch 0: przeanalizowano 507 kom�rek, 4 z wysokim confidence
+Batch 0: znaleziono 4 finalnych predykcji
+
+Znaleziono 4 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 637x637)
+  Predykcja 1: center=(328.0,523.7), size=(414.9x425.5)
+ bbox=(120.6,310.9,535.4,637.0)
+  Predykcja 2: center=(369.0,523.2), size=(406.0x412.1)
+ bbox=(166.0,317.2,572.0,637.0)
+  Predykcja 3: center=(329.3,564.4), size=(400.0x417.2)
+ bbox=(129.3,355.8,529.3,637.0)
+  Predykcja 4: center=(371.1,564.5), size=(396.8x421.3)
+ bbox=(172.8,353.9,569.5,637.0)
+
+Dodawanie klasyfikacji b�lu dla 4 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (120,310) -> (535,637), rozmiar: 415x327
+    Klasyfikator b�lu - raw output: [-6.0692253  2.3434842  4.510674 ]
+    Klasyfikator b�lu - probabilities: [2.2809656e-05 1.0273345e-01 8.9724374e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.8972
+ Wynik: poziom b�lu 2, confidence 0.8972
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (165,317) -> (572,637), rozmiar: 407x320
+    Klasyfikator b�lu - raw output: [-7.6955433  2.5444698  5.692527 ]
+    Klasyfikator b�lu - probabilities: [1.4702018e-06 4.1167848e-02 9.5883065e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9588
+ Wynik: poziom b�lu 2, confidence 0.9588
+
+Predykcja 3: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (129,355) -> (529,637), rozmiar: 400x282
+    Klasyfikator b�lu - raw output: [-4.8218746  2.2199767  3.6550515]
+    Klasyfikator b�lu - probabilities: [1.6814732e-04 1.9227685e-01 8.0755496e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.8076
+ Wynik: poziom b�lu 2, confidence 0.8076
+
+Predykcja 4: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (172,353) -> (569,637), rozmiar: 397x284
+    Klasyfikator b�lu - raw output: [-7.0096354  2.472197   5.1958003]
+    Klasyfikator b�lu - probabilities: [4.6949931e-06 6.1594579e-02 9.3840075e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9384
+ Wynik: poziom b�lu 2, confidence 0.9384
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_463.png
+========================================
+Wykryte oczy: 4
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (120.6, 310.9) - (535.4, 637.0)
+    YOLO Confidence: 0.8673
+    Pain Classification: Severe Pain (confidence: 0.8972)
+
+  Oko 2:
+    Pozycja: (166.0, 317.2) - (572.0, 637.0)
+    YOLO Confidence: 0.8436
+    Pain Classification: Severe Pain (confidence: 0.9588)
+
+  Oko 3:
+    Pozycja: (129.3, 355.8) - (529.3, 637.0)
+    YOLO Confidence: 0.4771
+    Pain Classification: Severe Pain (confidence: 0.8076)
+
+  Oko 4:
+    Pozycja: (172.8, 353.9) - (569.5, 637.0)
+    YOLO Confidence: 0.3743
+    Pain Classification: Severe Pain (confidence: 0.9384)
+
+  Ground Truth:
+    GT 1: (129, 311) - (537, 767), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.702)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.602)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.605)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.528)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_3_animalImage_463.png
+
+============================================================
+Obraz 4/10: animalImage_555.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (750, 722)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -22.9317
+  Max: 10.1723
+  Mean: -1.7668
+  Std: 4.9379
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.20329845   0.29209092  -0.21060658   0.09506731 -15.024729
+   0.3429275    0.36678308]
+  Anchor 0, Grid (6,6): raw values = [  0.07285364   0.13731211   0.80126804  -0.18715596 -14.110987
+   0.12666261   0.32797155]
+  Anchor 0, Grid (12,12): raw values = [  0.19003487   0.09597284  -0.2635674   -0.02968246 -12.359143
+  -0.02785536   0.04124096]
+
+  Wysokie confidence w [2,11,7]:
+    Raw values: x=0.5609, y=0.7587, w=0.6545, h=0.7255, conf=2.3959
+    After sigmoid conf: 0.9165
+    Class scores: [9.9461495e-08 9.9999988e-01]
+    Processed coords: x=0.5874, y=0.8985, w=0.6580, h=0.6738
+    Class: 1, class_conf: 1.0000, final_conf: 0.9165
+
+  Wysokie confidence w [2,11,8]:
+    Raw values: x=0.1468, y=0.5968, w=0.5483, h=0.6919, conf=-0.3596
+    After sigmoid conf: 0.4111
+    Class scores: [4.600951e-07 9.999995e-01]
+    Processed coords: x=0.6567, y=0.8958, w=0.6337, h=0.6664
+    Class: 1, class_conf: 1.0000, final_conf: 0.4111
+
+  Wysokie confidence w [2,12,7]:
+    Raw values: x=0.3511, y=0.2451, w=0.5539, h=0.6425, conf=1.1283
+    After sigmoid conf: 0.7555
+    Class scores: [2.0381683e-04 9.9979621e-01]
+    Processed coords: x=0.5836, y=0.9662, w=0.6350, h=0.6553
+    Class: 1, class_conf: 0.9998, final_conf: 0.7554
+
+Batch 0: przeanalizowano 507 kom�rek, 3 z wysokim confidence
+Batch 0: znaleziono 3 finalnych predykcji
+
+Znaleziono 3 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 750x722)
+  Predykcja 1: center=(440.6,648.7), size=(493.5x486.5)
+ bbox=(193.8,405.5,687.3,722.0)
+  Predykcja 2: center=(492.5,646.7), size=(475.3x481.1)
+ bbox=(254.8,406.2,730.2,722.0)
+  Predykcja 3: center=(437.7,697.6), size=(476.3x473.1)
+ bbox=(199.6,461.0,675.8,722.0)
+
+Dodawanie klasyfikacji b�lu dla 3 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (193,405) -> (687,722), rozmiar: 494x317
+    Klasyfikator b�lu - raw output: [-8.550455   2.8536444  6.3184905]
+    Klasyfikator b�lu - probabilities: [3.3816059e-07 3.0329177e-02 9.6967053e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9697
+ Wynik: poziom b�lu 2, confidence 0.9697
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (254,406) -> (730,722), rozmiar: 476x316
+    Klasyfikator b�lu - raw output: [-8.837433  2.965061  6.543892]
+    Klasyfikator b�lu - probabilities: [2.0324555e-07 2.7150571e-02 9.7284919e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9728
+ Wynik: poziom b�lu 2, confidence 0.9728
+
+Predykcja 3: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (199,461) -> (675,722), rozmiar: 476x261
+    Klasyfikator b�lu - raw output: [-8.388818  2.726159  6.192611]
+    Klasyfikator b�lu - probabilities: [4.5082848e-07 3.0281980e-02 9.6971762e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9697
+ Wynik: poziom b�lu 2, confidence 0.9697
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_555.png
+========================================
+Wykryte oczy: 3
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (193.8, 405.5) - (687.3, 722.0)
+    YOLO Confidence: 0.9165
+    Pain Classification: Severe Pain (confidence: 0.9697)
+
+  Oko 2:
+    Pozycja: (254.8, 406.2) - (730.2, 722.0)
+    YOLO Confidence: 0.4111
+    Pain Classification: Severe Pain (confidence: 0.9728)
+
+  Oko 3:
+    Pozycja: (199.6, 461.0) - (675.8, 722.0)
+    YOLO Confidence: 0.7554
+    Pain Classification: Severe Pain (confidence: 0.9697)
+
+  Ground Truth:
+    GT 1: (174, 394) - (704, 935), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.545)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_4_animalImage_555.png
+
+============================================================
+Obraz 5/10: animalImage_543.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (644, 639)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -23.6034
+  Max: 8.9154
+  Mean: -1.8895
+  Std: 5.2255
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [-1.4853962e-01  4.5631653e-01  1.5069962e-02 -7.5176813e-02
+ -1.5385297e+01  2.9460210e-01  5.3325325e-01]
+  Anchor 0, Grid (6,6): raw values = [ 3.4472531e-01  2.5611943e-01  8.7122560e-01 -3.9156437e-01
+ -1.4877267e+01  3.7027895e-03  1.7827433e-01]
+  Anchor 0, Grid (12,12): raw values = [ -0.0766009    0.13037619  -0.04879341   0.103462   -16.106934
+  -0.06945298  -0.03932827]
+
+  Wysokie confidence w [2,11,6]:
+    Raw values: x=0.7099, y=0.4303, w=0.6668, h=0.6980, conf=-1.7458
+    After sigmoid conf: 0.1486
+
+  Wysokie confidence w [2,11,7]:
+    Raw values: x=0.3725, y=0.4263, w=0.5938, h=0.6494, conf=1.1491
+    After sigmoid conf: 0.7593
+    Class scores: [2.6426985e-04 9.9973577e-01]
+    Processed coords: x=0.5840, y=0.8927, w=0.6442, h=0.6569
+    Class: 1, class_conf: 0.9997, final_conf: 0.7591
+
+Batch 0: przeanalizowano 507 kom�rek, 2 z wysokim confidence
+Batch 0: znaleziono 1 finalnych predykcji
+
+Znaleziono 1 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 644x639)
+  Predykcja 1: center=(376.1,570.4), size=(414.9x419.7)
+ bbox=(168.7,360.6,583.5,639.0)
+
+Dodawanie klasyfikacji b�lu dla 1 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (168,360) -> (583,639), rozmiar: 415x279
+    Klasyfikator b�lu - raw output: [-2.982984   2.0787518  2.4140835]
+    Klasyfikator b�lu - probabilities: [0.0026342 0.4158456 0.5815202]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.5815
+ Wynik: poziom b�lu 2, confidence 0.5815
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_543.png
+========================================
+Wykryte oczy: 1
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (168.7, 360.6) - (583.5, 639.0)
+    YOLO Confidence: 0.7591
+    Pain Classification: Severe Pain (confidence: 0.5815)
+
+  Ground Truth:
+    GT 1: (123, 325) - (572, 776), Pain: Pain Level 2
+ Dopasowano z predykcj� (IoU: 0.546)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 2)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_5_animalImage_543.png
+
+============================================================
+Obraz 6/10: animalImage_37.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (579, 579)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -24.3011
+  Max: 11.5678
+  Mean: -1.8603
+  Std: 5.2872
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.06991012   0.5787132    0.16911483  -0.17524388 -18.943531
+   0.34314194   0.7108611 ]
+  Anchor 0, Grid (6,6): raw values = [  0.04995698   0.3446254    0.7035812   -0.10601905 -14.19154
+   0.05464232   0.1022    ]
+  Anchor 0, Grid (12,12): raw values = [ 1.0191649e-02  1.4954492e-01 -2.2840247e-01  1.4853839e-02
+ -1.4896723e+01  3.3910386e-02  1.7244501e-01]
+
+  Wysokie confidence w [2,10,6]:
+    Raw values: x=0.9630, y=0.5689, w=0.6232, h=0.6360, conf=-0.0394
+    After sigmoid conf: 0.4901
+    Class scores: [1.43661355e-05 9.99985576e-01]
+    Processed coords: x=0.5172, y=0.8183, w=0.6509, h=0.6539
+    Class: 1, class_conf: 1.0000, final_conf: 0.4901
+
+  Wysokie confidence w [2,10,7]:
+    Raw values: x=0.3081, y=0.6909, w=0.5567, h=0.6136, conf=3.1366
+    After sigmoid conf: 0.9584
+    Class scores: [5.63437e-08 1.00000e+00]
+    Processed coords: x=0.5828, y=0.8205, w=0.6357, h=0.6488
+    Class: 1, class_conf: 1.0000, final_conf: 0.9584
+
+  Wysokie confidence w [2,11,7]:
+    Raw values: x=0.3452, y=0.0589, w=0.4619, h=0.6464, conf=-1.2212
+    After sigmoid conf: 0.2277
+
+Batch 0: przeanalizowano 507 kom�rek, 3 z wysokim confidence
+Batch 0: znaleziono 2 finalnych predykcji
+
+Znaleziono 2 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 579x579)
+  Predykcja 1: center=(299.5,473.8), size=(376.9x378.6)
+ bbox=(111.0,284.5,487.9,579.0)
+  Predykcja 2: center=(337.4,475.1), size=(368.1x375.6)
+ bbox=(153.4,287.2,521.5,579.0)
+
+Dodawanie klasyfikacji b�lu dla 2 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (111,284) -> (487,579), rozmiar: 376x295
+    Klasyfikator b�lu - raw output: [ 2.400833   1.4501859 -2.2116683]
+    Klasyfikator b�lu - probabilities: [0.7161181  0.27677312 0.00710887]
+    Klasyfikator b�lu - predicted class: 0, confidence: 0.7161
+ Wynik: poziom b�lu 0, confidence 0.7161
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (153,287) -> (521,579), rozmiar: 368x292
+    Klasyfikator b�lu - raw output: [ 2.2806616  1.5242058 -2.154693 ]
+    Klasyfikator b�lu - probabilities: [0.6751385  0.31686065 0.00800098]
+    Klasyfikator b�lu - predicted class: 0, confidence: 0.6751
+ Wynik: poziom b�lu 0, confidence 0.6751
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_37.png
+========================================
+Wykryte oczy: 2
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (111.0, 284.5) - (487.9, 579.0)
+    YOLO Confidence: 0.4901
+    Pain Classification: No Pain (confidence: 0.7161)
+
+  Oko 2:
+    Pozycja: (153.4, 287.2) - (521.5, 579.0)
+    YOLO Confidence: 0.9584
+    Pain Classification: No Pain (confidence: 0.6751)
+
+  Ground Truth:
+    GT 1: (136, 282) - (525, 684), Pain: Pain Level 0
+ Dopasowano z predykcj� (IoU: 0.633)
+ Klasyfikacja b�lu: no match (pred: 0, gt: 0)
+ Dopasowano z predykcj� (IoU: 0.687)
+ Klasyfikacja b�lu: no match (pred: 0, gt: 0)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_6_animalImage_37.png
+
+============================================================
+Obraz 7/10: animalImage_531.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (558, 558)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -23.3456
+  Max: 11.7502
+  Mean: -1.9930
+  Std: 5.5319
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [-3.6796704e-01  8.0044344e-02  7.4468553e-05  5.4411419e-02
+ -1.6675097e+01  3.5359067e-01  2.9751009e-01]
+  Anchor 0, Grid (6,6): raw values = [  0.60784936   0.40642262   1.0326198   -0.3601519  -15.728899
+  -0.24219012   0.09520695]
+  Anchor 0, Grid (12,12): raw values = [  0.0468585    0.13144943  -0.09742229   0.02603315 -15.365223
+   0.04841524   0.08490435]
+
+  Wysokie confidence w [2,10,7]:
+    Raw values: x=0.8664, y=0.5728, w=0.6083, h=0.6145, conf=-1.3566
+    After sigmoid conf: 0.2048
+
+  Wysokie confidence w [2,10,8]:
+    Raw values: x=0.1560, y=0.8641, w=0.6369, h=0.6238, conf=0.6126
+    After sigmoid conf: 0.6485
+    Class scores: [5.9208116e-07 9.9999940e-01]
+    Processed coords: x=0.6568, y=0.8233, w=0.6540, h=0.6511
+    Class: 1, class_conf: 1.0000, final_conf: 0.6485
+
+  Wysokie confidence w [2,11,8]:
+    Raw values: x=0.2610, y=0.3881, w=0.5321, h=0.6133, conf=-0.2640
+    After sigmoid conf: 0.4344
+    Class scores: [2.0680163e-06 9.9999797e-01]
+    Processed coords: x=0.6588, y=0.8920, w=0.6300, h=0.6487
+    Class: 1, class_conf: 1.0000, final_conf: 0.4344
+
+  Wysokie confidence w [2,11,10]:
+    Raw values: x=0.1016, y=0.4971, w=0.6277, h=0.7068, conf=-1.7573
+    After sigmoid conf: 0.1471
+
+Batch 0: przeanalizowano 507 kom�rek, 4 z wysokim confidence
+Batch 0: znaleziono 2 finalnych predykcji
+
+Znaleziono 2 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 558x558)
+  Predykcja 1: center=(366.5,459.4), size=(365.0x363.3)
+ bbox=(184.0,277.8,549.0,558.0)
+  Predykcja 2: center=(367.6,497.7), size=(351.5x362.0)
+ bbox=(191.9,316.7,543.4,558.0)
+
+Dodawanie klasyfikacji b�lu dla 2 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (184,277) -> (548,558), rozmiar: 364x281
+    Klasyfikator b�lu - raw output: [-9.1029    2.794775  6.729419]
+    Klasyfikator b�lu - probabilities: [1.3052730e-07 1.9177677e-02 9.8082215e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9808
+ Wynik: poziom b�lu 2, confidence 0.9808
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (191,316) -> (543,558), rozmiar: 352x242
+    Klasyfikator b�lu - raw output: [-8.85032   2.708749  6.541485]
+    Klasyfikator b�lu - probabilities: [2.0235865e-07 2.1191498e-02 9.7880828e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9788
+ Wynik: poziom b�lu 2, confidence 0.9788
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_531.png
+========================================
+Wykryte oczy: 2
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (184.0, 277.8) - (549.0, 558.0)
+    YOLO Confidence: 0.6485
+    Pain Classification: Severe Pain (confidence: 0.9808)
+
+  Oko 2:
+    Pozycja: (191.9, 316.7) - (543.4, 558.0)
+    YOLO Confidence: 0.4344
+    Pain Classification: Severe Pain (confidence: 0.9788)
+
+  Ground Truth:
+    GT 1: (142, 270) - (550, 652), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.656)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.544)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_7_animalImage_531.png
+
+============================================================
+Obraz 8/10: animalImage_645.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (571, 571)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -24.3057
+  Max: 10.0320
+  Mean: -1.9260
+  Std: 5.3705
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.11279237   0.6277969    0.18699247  -0.25104633 -18.120106
+   0.44479805   0.62972695]
+  Anchor 0, Grid (6,6): raw values = [ -0.20826364  -0.16448148   0.6502554   -0.0781827  -13.438478
+   0.12418529   0.07698795]
+  Anchor 0, Grid (12,12): raw values = [ 1.51453435e-01  1.15594655e-01 -3.93686563e-01 -1.15878955e-02
+ -1.51816235e+01 -1.41557828e-02  3.79096568e-02]
+
+  Wysokie confidence w [2,10,8]:
+    Raw values: x=0.9248, y=0.5476, w=0.5988, h=0.6392, conf=0.6000
+    After sigmoid conf: 0.6457
+    Class scores: [5.7861005e-08 1.0000000e+00]
+    Processed coords: x=0.6705, y=0.8180, w=0.6454, h=0.6546
+    Class: 1, class_conf: 1.0000, final_conf: 0.6457
+
+  Wysokie confidence w [2,10,9]:
+    Raw values: x=0.3864, y=0.5770, w=0.6476, h=0.6159, conf=2.1790
+    After sigmoid conf: 0.8983
+    Class scores: [1.0482266e-08 1.0000000e+00]
+    Processed coords: x=0.7381, y=0.8185, w=0.6565, h=0.6493
+    Class: 1, class_conf: 1.0000, final_conf: 0.8983
+
+  Wysokie confidence w [2,11,8]:
+    Raw values: x=0.8129, y=0.1709, w=0.5191, h=0.7224, conf=-1.9618
+    After sigmoid conf: 0.1233
+
+  Wysokie confidence w [2,11,9]:
+    Raw values: x=0.4255, y=-0.0070, w=0.4815, h=0.6696, conf=-2.1613
+    After sigmoid conf: 0.1033
+
+Batch 0: przeanalizowano 507 kom�rek, 4 z wysokim confidence
+Batch 0: znaleziono 2 finalnych predykcji
+
+Znaleziono 2 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 571x571)
+  Predykcja 1: center=(382.8,467.1), size=(368.5x373.8)
+ bbox=(198.6,280.2,567.1,571.0)
+  Predykcja 2: center=(421.5,467.4), size=(374.8x370.7)
+ bbox=(234.0,282.0,571.0,571.0)
+
+Dodawanie klasyfikacji b�lu dla 2 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (198,280) -> (567,571), rozmiar: 369x291
+    Klasyfikator b�lu - raw output: [-0.4665023  3.1505568 -0.2181187]
+    Klasyfikator b�lu - probabilities: [0.02531012 0.94224346 0.03244636]
+    Klasyfikator b�lu - predicted class: 1, confidence: 0.9422
+ Wynik: poziom b�lu 1, confidence 0.9422
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (234,281) -> (571,571), rozmiar: 337x290
+    Klasyfikator b�lu - raw output: [-2.2454314  2.2769616  1.5941778]
+    Klasyfikator b�lu - probabilities: [0.00716523 0.6595995  0.33323538]
+    Klasyfikator b�lu - predicted class: 1, confidence: 0.6596
+ Wynik: poziom b�lu 1, confidence 0.6596
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_645.png
+========================================
+Wykryte oczy: 2
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (198.6, 280.2) - (567.1, 571.0)
+    YOLO Confidence: 0.6457
+    Pain Classification: Mild Pain (confidence: 0.9422)
+
+  Oko 2:
+    Pozycja: (234.0, 282.0) - (571.0, 571.0)
+    YOLO Confidence: 0.8983
+    Pain Classification: Mild Pain (confidence: 0.6596)
+
+  Ground Truth:
+    GT 1: (186, 269) - (643, 654), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.609)
+ Klasyfikacja b�lu: no match (pred: 1, gt: 1)
+ Dopasowano z predykcj� (IoU: 0.554)
+ Klasyfikacja b�lu: no match (pred: 1, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_8_animalImage_645.png
+
+============================================================
+Obraz 9/10: animalImage_450.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (648, 648)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -20.5967
+  Max: 9.3952
+  Mean: -1.9247
+  Std: 5.2902
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.33083132   0.47634605   0.08605823  -0.12064803 -16.261686
+   0.34592372   0.48769096]
+  Anchor 0, Grid (6,6): raw values = [-3.0693471e-01  6.3364461e-02  5.7501912e-01 -8.7589175e-03
+ -1.6509443e+01  5.3029549e-01  6.5813243e-02]
+  Anchor 0, Grid (12,12): raw values = [  0.09077092   0.17557976  -0.30450705  -0.04068526 -17.801464
+   0.18103665   0.12372716]
+
+  Wysokie confidence w [2,10,9]:
+    Raw values: x=0.3963, y=1.0138, w=0.7081, h=0.7353, conf=0.6618
+    After sigmoid conf: 0.6597
+    Class scores: [8.990723e-08 9.999999e-01]
+    Processed coords: x=0.7383, y=0.8257, w=0.6700, h=0.6760
+    Class: 1, class_conf: 1.0000, final_conf: 0.6597
+
+  Wysokie confidence w [2,11,9]:
+    Raw values: x=0.6185, y=0.3304, w=0.6070, h=0.6476, conf=1.2419
+    After sigmoid conf: 0.7759
+    Class scores: [1.23790285e-08 1.00000000e+00]
+    Processed coords: x=0.7423, y=0.8909, w=0.6473, h=0.6565
+    Class: 1, class_conf: 1.0000, final_conf: 0.7759
+
+  Wysokie confidence w [2,11,10]:
+    Raw values: x=0.0791, y=0.3335, w=0.5805, h=0.6854, conf=-2.0460
+    After sigmoid conf: 0.1145
+
+Batch 0: przeanalizowano 507 kom�rek, 3 z wysokim confidence
+Batch 0: znaleziono 2 finalnych predykcji
+
+Znaleziono 2 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 648x648)
+  Predykcja 1: center=(478.4,535.0), size=(434.1x438.0)
+ bbox=(261.3,316.0,648.0,648.0)
+  Predykcja 2: center=(481.0,577.3), size=(419.4x425.4)
+ bbox=(271.3,364.6,648.0,648.0)
+
+Dodawanie klasyfikacji b�lu dla 2 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (261,316) -> (648,648), rozmiar: 387x332
+    Klasyfikator b�lu - raw output: [-3.1522477  2.1366115  2.440455 ]
+    Klasyfikator b�lu - probabilities: [0.00213868 0.42371005 0.5741513 ]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.5742
+ Wynik: poziom b�lu 2, confidence 0.5742
+
+Predykcja 2: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (271,364) -> (648,648), rozmiar: 377x284
+    Klasyfikator b�lu - raw output: [-2.440635   2.2534337  1.7843792]
+    Klasyfikator b�lu - probabilities: [0.00559683 0.611717   0.3826862 ]
+    Klasyfikator b�lu - predicted class: 1, confidence: 0.6117
+ Wynik: poziom b�lu 1, confidence 0.6117
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_450.png
+========================================
+Wykryte oczy: 2
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (261.3, 316.0) - (648.0, 648.0)
+    YOLO Confidence: 0.6597
+    Pain Classification: Severe Pain (confidence: 0.5742)
+
+  Oko 2:
+    Pozycja: (271.3, 364.6) - (648.0, 648.0)
+    YOLO Confidence: 0.7759
+    Pain Classification: Mild Pain (confidence: 0.6117)
+
+  Ground Truth:
+    GT 1: (232, 319) - (740, 787), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.532)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_9_animalImage_450.png
+
+============================================================
+Obraz 10/10: animalImage_469.png
+============================================================
+Przetworzony obraz: torch.Size([1, 3, 416, 416]), oryginalny rozmiar: (583, 583)
+YOLO output shape: torch.Size([1, 3, 13, 13, 7])
+Input output shape: torch.Size([1, 3, 13, 13, 7])
+Output tensor statistics:
+  Min: -21.3336
+  Max: 10.7024
+  Mean: -1.6171
+  Std: 4.6247
+Format 5D wykryty: batch=1, anchors=3, grid=13, channels=7
+Przetwarzanie z: batch_size=1, num_anchors=3, grid_size=13, num_classes=2
+
+Pr�bki surowych warto�ci predykcji:
+  Anchor 0, Grid (0,0): raw values = [ -0.20935467   0.12020202  -0.25418535   0.19218494 -14.222598
+   0.32282498   0.30895174]
+  Anchor 0, Grid (6,6): raw values = [  0.43202484   0.1849026    0.43986464   0.20314668 -12.018231
+  -0.55659735  -0.11085849]
+  Anchor 0, Grid (12,12): raw values = [ 2.5574863e-03  1.1635107e-01 -1.4345005e-01  3.7153389e-02
+ -1.5136190e+01 -1.2349077e-02 -1.4728781e-02]
+
+  Wysokie confidence w [2,11,9]:
+    Raw values: x=0.3520, y=0.6621, w=0.6554, h=0.7944, conf=-0.7305
+    After sigmoid conf: 0.3251
+    Class scores: [3.541145e-06 9.999964e-01]
+    Processed coords: x=0.7375, y=0.8969, w=0.6582, h=0.6888
+    Class: 1, class_conf: 1.0000, final_conf: 0.3251
+
+  Wysokie confidence w [2,12,9]:
+    Raw values: x=0.2571, y=0.2390, w=0.5821, h=0.7378, conf=-1.4014
+    After sigmoid conf: 0.1976
+
+Batch 0: przeanalizowano 507 kom�rek, 2 z wysokim confidence
+Batch 0: znaleziono 1 finalnych predykcji
+
+Znaleziono 1 detekcji po dekodowaniu
+
+Konwersja do wsp�rz�dnych pikseli (obraz: 583x583)
+  Predykcja 1: center=(429.9,522.9), size=(383.7x401.6)
+ bbox=(238.1,322.1,583.0,583.0)
+
+Dodawanie klasyfikacji b�lu dla 1 predykcji...
+
+Predykcja 1: eye
+  Klasyfikacja b�lu dla oka...
+    Wycinanie regionu: (238,322) -> (583,583), rozmiar: 345x261
+    Klasyfikator b�lu - raw output: [-8.291697   2.6583128  6.1201572]
+    Klasyfikator b�lu - probabilities: [5.3406717e-07 3.0417573e-02 9.6958184e-01]
+    Klasyfikator b�lu - predicted class: 2, confidence: 0.9696
+ Wynik: poziom b�lu 2, confidence 0.9696
+
+========================================
+PODSUMOWANIE WYNIK�W DLA animalImage_469.png
+========================================
+Wykryte oczy: 1
+Ground truth oczy: 1
+
+  Oko 1:
+    Pozycja: (238.1, 322.1) - (583.0, 583.0)
+    YOLO Confidence: 0.3251
+    Pain Classification: Severe Pain (confidence: 0.9696)
+
+  Ground Truth:
+    GT 1: (151, 284) - (576, 689), Pain: Pain Level 1
+ Dopasowano z predykcj� (IoU: 0.507)
+ Klasyfikacja b�lu: no match (pred: 2, gt: 1)
+
+========================================
+WIZUALIZACJA WYNIK�W
+========================================
+Zapisano wizualizacj�: yolo_test_result_10_animalImage_469.png
+
+============================================================
+FINALNE STATYSTYKI TESTOWANIA
+============================================================
+��cznie przetestowanych obraz�w: 10
+��cznie wykrytych oczu: 22
+��cznie GT oczu: 10
+Dopasowanych detekcji (IoU > 0.5): 19
+
+METRYKI DETEKCJI:
+  Precision: 0.864 (19/22)
+  Recall: 1.900 (19/10)
+  F1-Score: 1.188
+  �rednie IoU: 0.604
+
+METRYKI KLASYFIKACJI B�LU:
+  Dok�adno��: 0.000 (0/22)
+  ��cznie sklasyfikowanych: 22
+  Poprawnych klasyfikacji: 0
