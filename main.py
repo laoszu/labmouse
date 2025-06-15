@@ -1,23 +1,13 @@
-import glob
 import os
 import json
-import random
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import cv2
-import numpy as np
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
 from torchvision import transforms
 from PIL import Image
-import torchvision.models as models
-import matplotlib.pyplot as plt
-from tqdm import tqdm
 
 from MouseDataLoader import MousePainDataLoader
-from MouseEyeDataset import MouseEyeDataset
-from SimpleYOLO import SimpleYOLO, SimpleYOLOLoss, YOLODataset
+from SimpleYOLO import SimpleYOLO, YOLODataset
 from MousePainDataset import MousePainDataset
 from PainClassifier import PainClassifier
 
