@@ -73,16 +73,21 @@ The system evaluates pain based on facial features:
 ## Usage
 
 ```python
-from Face_detection.yolo import SimpleYOLO
-from Eyes_detection.classifier import PainClassifier
+from SimpleYOLO import SimpleYOLO
+from PainClassifier import PainClassifier
 
 yolo_model = SimpleYOLO()
 pain_classifier = PainClassifier()
 
-yolo_model.load_state_dict(torch.load('models/yolo_weights.pth'))
-pain_classifier.load_state_dict(torch.load('models/classifier_weights.pth'))
+yolo_model.load_state_dict(torch.load('models/yolo_model.pth'))
+pain_classifier.load_state_dict(torch.load('models/best_classifier.pth'))
+
+# image = ... sth sth
 
 detections = yolo_model(image)
+
+# cropped_face = ... sth sth
+
 pain_level = pain_classifier(cropped_face)
 ```
 
